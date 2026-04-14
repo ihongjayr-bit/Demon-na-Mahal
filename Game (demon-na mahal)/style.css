@@ -1,0 +1,135 @@
+body {
+    background-image: url("background.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1500px 1000px;
+    margin: 0;
+    color: rgb(9, 7, 7);
+    font-family: sans-serif;
+}
+
+.startBtn{
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    text-align: center;
+    padding: 10px 20px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.text-top{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: fantasy;
+    color: white;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.focus-gallery {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    height: 80vh;
+    align-items: center;
+    gap: 200px;
+    padding: 0 calc(50vw - 150px);
+    scrollbar-width: none;
+    animation: float 0.8s ease-in-out infinite;
+}
+
+.focus-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* Base styles for all character cards */
+.item1, .item2, .item3, .item4 {
+    flex: 0 0 300px;
+    height: 400px;
+    scroll-snap-align: center;
+    animation: pop-in linear both;
+    animation-timeline: view(x);
+
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    
+    /* These properties align and scale your GIFs */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    
+    /* Text styling for the names */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 2px solid transparent;
+
+
+}
+
+.item1:hover, .item2:hover, .item3:hover, .item4:hover {
+    transform: translateY(-10px) scale(1.05);
+    filter: brightness(1.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.item1:active, .item2:active, .item3:active, .item4:active {
+    transform: scale(0.95);
+}
+
+.item1 { background-image: url("warrior.gif"); background-color: #adadad; }
+.item2 { background-image: url("mage.gif"); background-color: #03343f; }
+.item3 { background-image: url("ninja.gif"); background-color: #30336b; }
+.item4 { background-image: url("assassin.gif"); background-color: #130f40; }
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.5) rotate(-10deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5) rotate(10deg);
+        opacity: 0.3;
+    }
+}
+
+.warrior-link:active{
+    color: black;
+}
+.mage-link:active{
+    color: black;
+}
+.ninja-link:active{
+    color: black;
+}
+.assassin-link:active{
+    color: black;
+}

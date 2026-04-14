@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Character Selection</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1 class="text-top" >Choose Your Character</h1>
+
+
+        <div class="focus-gallery">
+            <div class="item1" onclick="selectCharacter('Warrior'); location.href='Storylines/warrior.html'">Warrior</div>
+            <div class="item2" onclick="selectCharacter('Mage'); location.href='Storylines/mage.html'">Mage</div>
+            <div class="item3" onclick="selectCharacter('Ninja'); location.href='Storylines/ninja.html'">Ninja</div> 
+            <div class="item4" onclick="selectCharacter('Assassin'); location.href='Storylines/assassin.html'">Assassin</div>
+            </div>
+        </div>
+
+        <a href="starting_menu.html" class="back-button">Back to Main Menu</a>
+
+        <script>
+            function selectCharacter(character) {
+                // Code to handle character selection goes here
+                alert("You have selected: " + character)
+            }
+        </script>
+    </body>
+</html>
